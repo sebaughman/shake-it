@@ -17,7 +17,6 @@ class ReviewItem extends Component {
     )
   }
 
-
   render() {
     const { id, rating, publish_date, body, author } = this.props
     return (
