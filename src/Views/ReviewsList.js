@@ -7,14 +7,17 @@ class ReviewList extends Component {
   get reviewItems() {
     const { reviews } = this.props
     if (isArray(reviews)) {
-      return reviews.map(review => <ReviewItem {...review} />)
+      return reviews.map((review, i) => <ReviewItem key={i} {...review} />)
     }
     return '...loading'
   }
 
   render() {
     return (
-      <div>{this.reviewItems}</div>
+      <div>
+        <div className='section-title'>Reviews</div>
+        {this.reviewItems}
+      </div>
     )
   }
 }
